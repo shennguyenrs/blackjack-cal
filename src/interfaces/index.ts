@@ -23,8 +23,3 @@ export enum PLAYER_STATUS {
   LOSE = "lose",
 }
 
-export const RULE = {
-  DRAW: 0,
-  WIN: 0,
-  LOSE: 0,
-};
