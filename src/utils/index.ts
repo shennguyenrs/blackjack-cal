@@ -1,9 +1,11 @@
 import { PLAYER_ROLE, PLAYER_STATUS, USER } from "../interfaces";
 
 export function isHasDealer(users: USER[]) {
-  for (const i of users) {
-    if (i.role === PLAYER_ROLE.DEALER) {
-      return true
+  if (users.length) {
+    for (const i of users) {
+      if (i.role === PLAYER_ROLE.DEALER) {
+        return true
+      }
     }
   }
 
@@ -16,7 +18,7 @@ export function validateBeforeCalculate(users: USER[]) {
   }
 
   for (const i of users) {
-    if (i.role !== PLAYER_ROLE.DEALER && (i.status === undefined || i.status === "")) {
+    if (i.role !== PLAYER_ROLE.DEALER && i.status !== PLAYER_STATUS.WON && i.status !== PLAYER_STATUS.DRAW && i.status !== PLAYER_STATUS.LOSE) {
       return false
     }
   }

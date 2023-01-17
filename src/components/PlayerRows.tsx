@@ -26,7 +26,7 @@ export default function PlayerRows() {
                 Bid
               </Th>
               <Th w="220px">
-                Round status
+                Round Status
               </Th>
               <Th></Th>
             </Tr>
